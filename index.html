@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-exemplo="bairro e cidade no título">Titos Lanches | Lanche com delivery no Centro de Maricá</title>
+  <meta name="description" data-exemplo="bairro e cidade na descrição" content="Lanches na chapa, porções e milkshake com entrega no Centro de Maricá. Monte o pedido no cardápio e mande pronto pelo WhatsApp.">
+  <link rel="canonical" href="https://victorhsg-10.github.io/titos-lanches/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Titos Lanches | Lanche com delivery no Centro de Maricá">
+  <meta property="og:description" content="Monte o pedido no cardápio e mande pronto pelo WhatsApp.">
+  <meta property="og:url" content="https://victorhsg-10.github.io/titos-lanches/">
+  <!-- og:image: hoje é o logo. [NEED: foto real do lanche mais pedido, 1200x630] -->
+  <meta property="og:image" content="https://victorhsg-10.github.io/titos-lanches/assets/og-titos.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="assets/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/icone-180.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- JetBrains Mono: o "TITOS" do logo. Roboto com largura variável: o texto e o "DELIVERY" condensado. -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700..800&amp;family=Roboto:wdth,wght@75..100,400..700&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Marca que o JavaScript está ativo antes da página aparecer (evita as abas e o arco "piscarem") -->
+  <script>document.documentElement.classList.add("js");</script>
+
+  <script type="application/ld+json" data-exemplo="dados estruturados (endereço, telefone, horário, preços)">
+  {
+    "@context": "https://schema.org",
+    "@type": "FastFoodRestaurant",
+    "name": "Titos Lanches",
+    "url": "https://victorhsg-10.github.io/titos-lanches/",
+    "logo": "https://victorhsg-10.github.io/titos-lanches/assets/logo-titos.png",
+    "image": "https://victorhsg-10.github.io/titos-lanches/assets/og-titos.png",
+    "telephone": "+55 21 99999-0000",
+    "priceRange": "R$ 4 a R$ 32",
+    "servesCuisine": "Lanches",
+    "paymentAccepted": "Pix, cartão de débito, cartão de crédito, dinheiro",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua da Matriz, 45",
+      "addressLocality": "Maricá",
+      "addressRegion": "RJ",
+      "addressCountry": "BR"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Sunday"],
+        "opens": "18:00",
+        "closes": "23:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday", "Saturday"],
+        "opens": "18:00",
+        "closes": "23:59"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Ícones: traço de 2px no estilo Lucide (ISC). WhatsApp: Simple Icons (CC0). Ver docs/design.md. -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path class="cheio" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.08-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.69.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41Z"/></symbol>
+    <symbol id="i-sacola" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+    <symbol id="i-mais" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+    <symbol id="i-menos" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-moto" viewBox="0 0 24 24"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M8 17h6l3-6"/><path d="M14 5h2.5l2.5 9"/><path d="M3 13V8h7v5"/></symbol>
+    <symbol id="i-pino" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-loja" viewBox="0 0 24 24"><path d="m2 7 4.4-4.4A2 2 0 0 1 7.8 2h8.4a2 2 0 0 1 1.4.6L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-4 0 2 2 0 0 1-4 0 2 2 0 0 1-4 0 2 2 0 0 1-4 0 2 2 0 0 1-4 0V7"/></symbol>
+    <symbol id="i-cartao" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></symbol>
+    <symbol id="i-chama" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5Z"/></symbol>
+  </svg>
+
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="limite topo__linha">
+      <a class="marca" href="#inicio"><img src="assets/logo-titos.png" width="480" height="326" alt="Titos Delivery"></a>
+      <nav class="topo__nav" aria-label="Seções da página">
+        <a href="#cardapio">Cardápio</a>
+        <a href="#entrega">Entrega</a>
+        <a href="#horario">Horário</a>
+      </nav>
+      <!-- Sem JS: botão do WhatsApp. Com JS: botão da sacola. -->
+      <a class="botao botao--pequeno topo__whats" href="https://wa.me/5521999990000?text=Ol%C3%A1%2C%20Titos%21%20Quero%20fazer%20um%20pedido.">
+        <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>Pedir pelo WhatsApp
+      </a>
+      <button class="topo__sacola" type="button" data-abrir-sacola aria-label="Abrir sacola, vazia">
+        <svg class="icone" aria-hidden="true"><use href="#i-sacola"/></svg>
+        <span class="topo__sacola-texto">Sacola</span>
+        <span class="contagem" data-contagem hidden>0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="balcao" id="inicio" aria-labelledby="titulo">
+      <div class="limite balcao__miolo">
+        <!-- O arco do logo em tamanho de tela: ketchup por fora, mostarda por dentro -->
+        <svg class="arco" viewBox="0 52 1000 280" aria-hidden="true" focusable="false">
+          <path class="arco__ketchup" d="M52 330A520 520 0 0 1 948 330" pathLength="1"/>
+          <path class="arco__mostarda" d="M113.6 330A468 468 0 0 1 886.4 330" pathLength="1"/>
+        </svg>
+
+        <p class="status" data-status data-exemplo="horário resumido">De terça a domingo, a partir das 18h.</p>
+        <h1 id="titulo" class="letreiro">Da chapa direto pra sua porta</h1>
+        <p class="selo" data-exemplo="bairro e cidade">Delivery no Centro de Maricá</p>
+        <p class="balcao__sub" data-exemplo="tempo de entrega">Monte seu pedido no cardápio e mande pronto pelo WhatsApp. A gente confirma o total e entrega em cerca de 40 minutos.</p>
+
+        <div class="balcao__acoes">
+          <a class="botao balcao__botao" href="#cardapio">Montar meu pedido</a>
+          <a class="botao botao--contorno" href="https://wa.me/5521999990000?text=Ol%C3%A1%2C%20Titos%21%20Quero%20fazer%20um%20pedido.">
+            <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>Pedir pelo WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <ul class="limite faixa" data-exemplo="tempo, taxa e pagamento">
+        <li><svg class="icone" aria-hidden="true"><use href="#i-moto"/></svg>Entrega em cerca de 40 min</li>
+        <li><svg class="icone" aria-hidden="true"><use href="#i-pino"/></svg>Taxa de R$ 5 no Centro</li>
+        <li><svg class="icone" aria-hidden="true"><use href="#i-loja"/></svg>Retirada no balcão sem taxa</li>
+        <li><svg class="icone" aria-hidden="true"><use href="#i-cartao"/></svg>Pix, cartão ou dinheiro</li>
+      </ul>
+    </section>
+
+    <section class="secao" id="cardapio" aria-labelledby="titulo-cardapio">
+      <div class="limite">
+        <h2 id="titulo-cardapio">Cardápio</h2>
+        <p class="secao__intro so-com-js">Toque no <strong>+</strong> para colocar na sacola. Quando terminar, o pedido vai pronto para o WhatsApp, com os itens e o total.</p>
+        <p class="secao__intro so-sem-js">Toque em <strong>Pedir</strong> e o WhatsApp abre com o item escrito.</p>
+
+        <!-- Abas: o js/pagina.js mostra uma categoria por vez. Sem JavaScript, aparecem todas. -->
+        <div class="abas" role="tablist" aria-label="Categorias do cardápio">
+          <button class="aba" type="button" role="tab" id="aba-lanches" aria-controls="painel-lanches" aria-selected="true">Lanches</button>
+          <button class="aba" type="button" role="tab" id="aba-porcoes" aria-controls="painel-porcoes" aria-selected="false">Porções</button>
+          <button class="aba" type="button" role="tab" id="aba-bebidas" aria-controls="painel-bebidas" aria-selected="false">Bebidas</button>
+        </div>
+
+        <!-- Cada item: data-id único, data-nome (vai na mensagem) e data-preco (número, em reais). -->
+        <div class="painel" role="tabpanel" id="painel-lanches" aria-labelledby="aba-lanches" data-exemplo="lanches e preços">
+          <h3 class="painel__titulo">Lanches</h3>
+          <ul class="itens">
+            <li class="item" data-id="x-burguer" data-nome="X-Burguer" data-preco="22">
+              <div class="item__info">
+                <h4 class="item__nome">X-Burguer</h4>
+                <p class="item__descricao">Pão brioche, hambúrguer de 120 g, queijo e maionese da casa.</p>
+              </div>
+              <p class="item__preco">R$ 22</p>
+              <div class="item__acao"><a class="item__pedir" href="https://wa.me/5521999990000?text=Ol%C3%A1%2C%20Titos%21%20Quero%20pedir%3A%201%20X-Burguer.">Pedir<span class="oculto"> X-Burguer</span></a></div>
+            </li>
+            <li class="item" data-id="x-salada" data-nome="X-Salada" data-preco="24">
+              <div class="item__info">
+                <h4 class="item__nome">X-Salada</h4>
+                <p class="item__descricao">Hambúrguer de 120 g, queijo, alface, tomate e maionese da casa.</p>
+              </div>
+              <p class="item__preco">R$ 24</p>
+              <div class="item__acao"><a class="item__pedir" href="https://wa.me/5521999990000?text=Ol%C3%A1%2C%20Titos%21%20Quero%20pedir%3A%201%20X-Salada.">Pedir<span class="oculto"> X-Salada</span></a></div>
+            </li>
+            <li class="item" data-id="x-bacon" data-nome="X-Bacon" data-preco="27">
+              <div class="item__info">
+                <h4 class="item__nome">X-Bacon</h4>
+                <p class="item__descricao">Hambúrguer de 120 g, queijo, bacon crocante e cebola na chapa.</p>
+              </div>
+              <p class="item__preco">R$ 27</p>
+              <div class="item__acao"><a class="item__pedir" href="https://wa.me/5521999990000?text=Ol%C3%A1%2C%20Titos%21%20Quero%20pedir%3A%201%20X-Bacon.">Pedir<span class="oculto"> X-Bacon</span></a></div>
+            </li>
+            <li class="item" data-id="x-tudo" data-nome="X-Tudo" data-preco="32">
+              <div class="item__info">
+                <p class="destaque" data-exemplo="item mais pedido"><svg class="icone" aria-hidden="true"><use href="#i-chama"/></svg>Mais pedido</p>
+                <h4 class="item__nome">X-Tudo</h4>
+                <p class="item__descricao">Dois hambúrgueres, ovo, bacon, presunto, queijo, alface e tomate.</p>
+              </div>
+              <p class="item__preco">R$ 32</p>
+              <div class="item__acao"><a class="item__pedir" href="https://wa.me/5521999990000?text=Ol%C3%A1%2C%20Titos%21%20Quero%20pedir%3A%201%20X-Tudo.">Pedir<span class="oculto"> X-Tudo</span></a></div>
+            </li>
+            <li class="item" data-id="cachorro-quente" data-nome="Cachorro-quente" data-preco="14">
+              <div class="item__info">
+                <h4 class="item__nome">Cachorro-quente</h4>
+                <p class="item__descricao">Duas salsichas, molho de tomate, milho, batata palha e queijo ralado.</p>
+              </div>
+              <p class="item__preco">R$ 14</p>
+              <div class="item__acao"><a class="item__pedir" href="https://wa.me/5521999990000?text=Ol%C3%A1%2C%20Titos%21%20Quero%20pedir%3A%201%20Cachorro-quente.">Pedir<span class="oculto"> Cachorro-quente</span></a></div>
+            </li>
+            <li class="item" data-id="misto-quente" data-nome="Misto quente" data-preco="12">
+              <div class="item__info">
+                <h4 class="item__nome">Misto quente</h4>
+                <p class="item__descricao">Pão de forma na chapa com presunto e queijo derretido.</p>
+              </div>
+              <p class="item__preco">R$ 12</p>
+              <div class="item__acao"><a class="item__pedir" href="https://wa.me/5521999990000?text=Ol%C3%A1%2C%20Titos%21%20Quero%20pedir%3A%201%20Misto%20quente.">Pedir<span class="oculto"> Misto quente</span></a></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="painel" role="tabpanel" id="painel-porcoes" aria-labelledby="aba-porcoes" data-exemplo="porções e preços">
+          <h3 class="painel__titulo">Porções</h3>
+          <ul class="itens">
+            <li class="item" data-id="batata-frita" data-nome="Batata frita" data-preco="20">
+              <div class="item__info">
+                <h4 class="item__nome">Batata frita</h4>
+                <p class="item__descricao">Porção de 300 g, serve duas pessoas.</p>
+              </div>
+              <p class="item__preco">R$ 20</p>
+              <div class="item__acao"><a class="item__pedir" href="https://wa.me/5521999990000?text=Ol%C3%A1%2C%20Titos%21%20Quero%20pedir%3A%201%20Batata%20frita.">Pedir<span class="oculto"> Batata frita</span></a></div>
+            </li>
+            <li class="item" data-id="batata-cheddar-bacon" data-nome="Batata com cheddar e bacon" data-preco="28">
+              <div class="item__info">
+                <p class="destaque" data-exemplo="item mais pedido"><svg class="icone" aria-hidden="true"><use href="#i-chama"/></svg>Mais pedido</p>
+                <h4 class="item__nome">Batata com cheddar e bacon</h4>
+                <p class="item__descricao">Porção de 300 g coberta com cheddar cremoso e bacon.</p>
+              </div>
+              <p class="item__preco">R$ 28</p>
+              <div class="item__acao"><a class="item__pedir" href="https://wa.me/5521999990000?text=Ol%C3%A1%2C%20Titos%21%20Quero%20pedir%3A%201%20Batata%20com%20cheddar%20e%20bacon.">Pedir<span class="oculto"> Batata com cheddar e bacon</span></a></div>
+            </li>
+            <li class="item" data-id="aipim-frito" data-nome="Aipim frito" data-preco="22">
+              <div class="item__info">
+                <h4 class="item__nome">Aipim frito</h4>
+                <p class="item__descricao">Porção de 400 g, crocante por fora e macio por dentro.</p>
+              </div>
+              <p class="item__preco">R$ 22</p>
+              <div class="item__acao"><a class="item__pedir" href="https://wa.me/5521999990000?text=Ol%C3%A1%2C%20Titos%21%20Quero%20pedir%3A%201%20Aipim%20frito.">Pedir<span class="oculto"> Aipim frito</span></a></div>
+            </li>
+            <li class="item" data-id="calabresa-acebolada" data-nome="Calabresa acebolada" data-preco="30">
+              <div class="item__info">
+                <h4 class="item__nome">Calabresa acebolada</h4>
+                <p class="item__descricao">Calabresa fatiada na chapa com cebola. Acompanha pão.</p>
+              </div>
+              <p class="item__preco">R$ 30</p>
+              <div class="item__acao"><a class="item__pedir" href="https://wa.me/5521999990000?text=Ol%C3%A1%2C%20Titos%21%20Quero%20pedir%3A%201%20Calabresa%20acebolada.">Pedir<span class="oculto"> Calabresa acebolada</span></a></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="painel" role="tabpanel" id="painel-bebidas" aria-labelledby="aba-bebidas" data-exemplo="bebidas e preços">
+          <h3 class="painel__titulo">Bebidas</h3>
+          <ul class="itens">
+            <li class="item" data-id="milkshake" data-nome="Milkshake 400 ml" data-preco="16">
+              <div class="item__info">
+                <h4 class="item__nome">Milkshake 400 ml</h4>
+                <p class="item__descricao">Chocolate, morango ou baunilha. Diga o sabor na observação.</p>
+              </div>
+              <p class="item__preco">R$ 16</p>
+              <div class="item__acao"><a class="item__pedir" href="https://wa.me/5521999990000?text=Ol%C3%A1%2C%20Titos%21%20Quero%20pedir%3A%201%20Milkshake%20400%20ml.">Pedir<span class="oculto"> Milkshake 400 ml</span></a></div>
+            </li>
+            <li class="item" data-id="suco-natural" data-nome="Suco natural 400 ml" data-preco="9">
+              <div class="item__info">
+                <h4 class="item__nome">Suco natural 400 ml</h4>
+                <p class="item__descricao">Laranja, maracujá ou abacaxi com hortelã.</p>
+              </div>
+              <p class="item__preco">R$ 9</p>
+              <div class="item__acao"><a class="item__pedir" href="https://wa.me/5521999990000?text=Ol%C3%A1%2C%20Titos%21%20Quero%20pedir%3A%201%20Suco%20natural%20400%20ml.">Pedir<span class="oculto"> Suco natural 400 ml</span></a></div>
+            </li>
+            <li class="item" data-id="refrigerante-lata" data-nome="Refrigerante lata" data-preco="6">
+              <div class="item__info">
+                <h4 class="item__nome">Refrigerante lata</h4>
+                <p class="item__descricao">350 ml, vários sabores.</p>
+              </div>
+              <p class="item__preco">R$ 6</p>
+              <div class="item__acao"><a class="item__pedir" href="https://wa.me/5521999990000?text=Ol%C3%A1%2C%20Titos%21%20Quero%20pedir%3A%201%20Refrigerante%20lata.">Pedir<span class="oculto"> Refrigerante lata</span></a></div>
+            </li>
+            <li class="item" data-id="agua-mineral" data-nome="Água mineral" data-preco="4">
+              <div class="item__info">
+                <h4 class="item__nome">Água mineral</h4>
+                <p class="item__descricao">500 ml, com ou sem gás.</p>
+              </div>
+              <p class="item__preco">R$ 4</p>
+              <div class="item__acao"><a class="item__pedir" href="https://wa.me/5521999990000?text=Ol%C3%A1%2C%20Titos%21%20Quero%20pedir%3A%201%20%C3%81gua%20mineral.">Pedir<span class="oculto"> Água mineral</span></a></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao--linha" aria-labelledby="titulo-passos">
+      <div class="limite">
+        <h2 id="titulo-passos">Do cardápio à chapa em uma mensagem</h2>
+        <!-- É uma sequência de verdade, por isso a lista numerada -->
+        <ol class="passos">
+          <li>
+            <h3>Monte a sacola</h3>
+            <p>Toque no + nos itens que você quer. Para tirar a cebola ou trocar o molho, escreva na observação.</p>
+          </li>
+          <li>
+            <h3>Mande pelo WhatsApp</h3>
+            <p>O pedido vai escrito, com itens, total e endereço. A gente responde confirmando.</p>
+          </li>
+          <li>
+            <h3>Receba ou retire</h3>
+            <p data-exemplo="tempos de entrega e retirada">Entrega em cerca de 40 minutos. Retirada no balcão em cerca de 20, sem taxa.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="secao secao--linha" id="entrega" aria-labelledby="titulo-entrega">
+      <div class="limite entrega">
+        <div class="entrega__texto">
+          <h2 id="titulo-entrega">Onde a gente entrega</h2>
+          <p class="secao__intro">A moto sai do Centro de Maricá. Quanto mais perto, menor a taxa.</p>
+          <ul class="zonas" data-exemplo="bairros e taxas de entrega">
+            <li class="zona zona--perto">
+              <svg class="zona__arco" viewBox="0 0 32 18" aria-hidden="true"><path d="M4 16A12 12 0 0 1 28 16"/></svg>
+              <span class="zona__nome">Centro</span>
+              <span class="zona__taxa">R$ 5</span>
+            </li>
+            <li class="zona zona--longe">
+              <svg class="zona__arco" viewBox="0 0 32 18" aria-hidden="true"><path d="M4 16A12 12 0 0 1 28 16"/></svg>
+              <span class="zona__nome">Flamengo, Mumbuca e Araçatiba</span>
+              <span class="zona__taxa">R$ 8</span>
+            </li>
+            <li class="zona zona--outros">
+              <svg class="zona__arco" viewBox="0 0 32 18" aria-hidden="true"><path d="M4 16A12 12 0 0 1 28 16"/></svg>
+              <span class="zona__nome">Outros bairros</span>
+              <span class="zona__taxa zona__taxa--texto">A combinar</span>
+            </li>
+          </ul>
+          <dl class="entrega__dados" data-exemplo="tempo médio e retirada">
+            <div><dt><svg class="icone" aria-hidden="true"><use href="#i-moto"/></svg>Tempo médio</dt><dd>40 minutos</dd></div>
+            <div><dt><svg class="icone" aria-hidden="true"><use href="#i-loja"/></svg>Retirada no balcão</dt><dd>Sem taxa</dd></div>
+          </dl>
+        </div>
+
+        <!-- Mapa em arcos: o arco de dentro do logo é a zona perto, o de fora é a zona longe -->
+        <figure class="mapa" aria-hidden="true">
+          <svg viewBox="0 0 400 262" focusable="false">
+            <path class="mapa__anel" d="M30 220A170 170 0 0 1 370 220H300A100 100 0 0 0 100 220Z"/>
+            <path class="mapa__miolo" d="M100 220A100 100 0 0 1 300 220Z"/>
+            <path class="mapa__longe" d="M30 220A170 170 0 0 1 370 220"/>
+            <path class="mapa__perto" d="M100 220A100 100 0 0 1 300 220"/>
+            <path class="mapa__chao" d="M8 220H392"/>
+            <text class="mapa__taxa" x="200" y="96">R$ 8</text>
+            <text class="mapa__taxa mapa__taxa--perto" x="200" y="170">R$ 5</text>
+            <use class="mapa__pino" href="#i-pino" x="186" y="186" width="28" height="28"/>
+            <text class="mapa__rotulo" x="200" y="250">Titos</text>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <section class="secao secao--linha" id="horario" aria-labelledby="titulo-horario">
+      <div class="limite local">
+        <div>
+          <h2 id="titulo-horario">Horário</h2>
+          <p class="status status--esquerda" data-status data-exemplo="horário resumido">De terça a domingo, a partir das 18h.</p>
+          <!-- data-dias: 0 é domingo, 6 é sábado. O js/pagina.js marca o dia de hoje. -->
+          <dl class="horario" data-exemplo="horário por dia">
+            <div data-dias="2 3 4"><dt>Terça a quinta</dt><dd>18h às 23h</dd></div>
+            <div data-dias="5 6"><dt>Sexta e sábado</dt><dd>18h à meia-noite</dd></div>
+            <div data-dias="0"><dt>Domingo</dt><dd>18h às 23h</dd></div>
+            <div data-dias="1"><dt>Segunda</dt><dd>Fechado</dd></div>
+          </dl>
+        </div>
+        <div>
+          <h2>Onde fica</h2>
+          <address class="local__endereco" data-exemplo="endereço completo">
+            <svg class="icone" aria-hidden="true"><use href="#i-pino"/></svg>
+            <span>Rua da Matriz, 45<br>Centro, Maricá, RJ</span>
+          </address>
+          <p class="local__ref" data-exemplo="ponto de referência">De frente para a praça, com mesas na calçada.</p>
+          <p class="local__ref" data-exemplo="número do WhatsApp">WhatsApp <a href="https://wa.me/5521999990000">(21) 99999-0000</a></p>
+          <a class="botao botao--contorno local__botao" data-exemplo="link do Google Maps (usar o link do perfil da empresa)" href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20da%20Matriz%2C%2045%2C%20Centro%2C%20Maric%C3%A1%2C%20RJ">
+            <svg class="icone" aria-hidden="true"><use href="#i-pino"/></svg>Abrir no Google Maps
+          </a>
+          <h3 class="local__subtitulo">Pagamento</h3>
+          <p data-exemplo="formas de pagamento">Pix, cartão de débito e crédito ou dinheiro. A maquininha vai com o entregador.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao--linha" aria-labelledby="titulo-perguntas">
+      <div class="limite">
+        <h2 id="titulo-perguntas">Antes de pedir</h2>
+        <div class="perguntas" data-exemplo="políticas da lanchonete (horário, bairros, pagamento, pedido mínimo)">
+          <details>
+            <summary>Até que horas posso pedir?</summary>
+            <p>Até 30 minutos antes de fechar. De terça a quinta e no domingo, até 22h30. Na sexta e no sábado, até 23h30.</p>
+          </details>
+          <details>
+            <summary>Vocês entregam no meu bairro?</summary>
+            <p>Entregamos no Centro, em Flamengo, Mumbuca e Araçatiba. Para outro bairro, mande o endereço no WhatsApp e a gente diz se chega e quanto fica.</p>
+          </details>
+          <details>
+            <summary>Dá para tirar ou trocar ingrediente?</summary>
+            <p>Dá. Escreva na observação da sacola, por exemplo “X-Bacon sem cebola”, ou avise na conversa.</p>
+          </details>
+          <details>
+            <summary>Como eu pago?</summary>
+            <p>Pix, cartão de débito ou crédito na maquininha que vai com o entregador, ou dinheiro. Se precisar de troco, diga para quanto.</p>
+          </details>
+          <details>
+            <summary>Tem pedido mínimo?</summary>
+            <p>Não. Pode pedir só um milkshake, e a taxa de entrega é a mesma.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="chamada" aria-labelledby="titulo-chamada">
+      <div class="limite chamada__miolo">
+        <svg class="arco arco--pequeno" viewBox="0 52 1000 280" aria-hidden="true" focusable="false">
+          <path class="arco__ketchup" d="M52 330A520 520 0 0 1 948 330"/>
+          <path class="arco__mostarda" d="M113.6 330A468 468 0 0 1 886.4 330"/>
+        </svg>
+        <h2 id="titulo-chamada">Bateu a fome?</h2>
+        <p class="chamada__texto" data-exemplo="horário resumido">A chapa liga às 18h, de terça a domingo. Monte seu pedido e mande pelo WhatsApp.</p>
+        <div class="balcao__acoes">
+          <a class="botao chamada__botao" href="#cardapio">Montar meu pedido</a>
+          <a class="botao botao--contorno" href="https://wa.me/5521999990000?text=Ol%C3%A1%2C%20Titos%21%20Quero%20fazer%20um%20pedido.">
+            <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>Pedir pelo WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="limite rodape__linha">
+      <img class="rodape__logo" src="assets/logo-titos.png" width="480" height="326" alt="Titos Delivery">
+      <address class="rodape__contato" data-exemplo="contato no rodapé">
+        Rua da Matriz, 45, Centro, Maricá, RJ<br>
+        WhatsApp <a href="https://wa.me/5521999990000">(21) 99999-0000</a><br>
+        Terça a domingo, a partir das 18h
+      </address>
+      <p class="rodape__credito">Modelo demonstrativo criado por <a href="https://github.com/VictorHSG-10">Victor</a>, <span data-ano>2026</span>.</p>
+    </div>
+  </footer>
+
+  <!-- Barra fixa, só no celular. Sacola vazia: WhatsApp. Com itens: abre a sacola. -->
+  <div class="barra" data-barra>
+    <a class="botao barra__whats" href="https://wa.me/5521999990000?text=Ol%C3%A1%2C%20Titos%21%20Quero%20fazer%20um%20pedido.">
+      <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>Pedir pelo WhatsApp
+    </a>
+    <button class="botao barra__sacola" type="button" data-abrir-sacola hidden>
+      <span class="barra__qtd"><svg class="icone" aria-hidden="true"><use href="#i-sacola"/></svg><span data-barra-qtd>0 itens</span></span>
+      <span>Ver sacola</span>
+      <span class="barra__total" data-barra-total>R$ 0,00</span>
+    </button>
+  </div>
+
+  <!-- Sacola: só funciona com JavaScript. Sem JS, cada item do cardápio tem o link Pedir. -->
+  <dialog class="sacola" data-sacola aria-labelledby="titulo-sacola">
+    <div class="sacola__topo">
+      <h2 id="titulo-sacola">Sua sacola</h2>
+      <button class="sacola__fechar" type="button" data-fechar-sacola aria-label="Fechar sacola">
+        <svg class="icone" aria-hidden="true"><use href="#i-fechar"/></svg>
+      </button>
+    </div>
+
+    <div class="sacola__vazia" data-sacola-vazia>
+      <svg class="icone sacola__vazia-icone" aria-hidden="true"><use href="#i-sacola"/></svg>
+      <p><strong>Sua sacola está vazia.</strong></p>
+      <p>Escolha no cardápio e toque no + para começar.</p>
+      <a class="botao" href="#cardapio" data-fechar-sacola>Ver cardápio</a>
+    </div>
+
+    <div class="sacola__cheia" data-sacola-cheia>
+      <div class="sacola__rolagem">
+        <ul class="sacola__itens" data-sacola-itens></ul>
+
+        <form class="sacola__form" data-sacola-form>
+          <fieldset class="opcoes">
+            <legend>Como você quer receber?</legend>
+            <label class="opcao"><input type="radio" name="receber" value="entrega" checked><span>Entrega</span></label>
+            <label class="opcao"><input type="radio" name="receber" value="retirada"><span>Retirada no balcão</span></label>
+          </fieldset>
+
+          <div class="campos" data-so-entrega>
+            <label class="campo">
+              <span>Bairro</span>
+              <select name="bairro" data-exemplo="bairros e taxas">
+                <option value="Centro" data-taxa="5">Centro (R$ 5)</option>
+                <option value="Flamengo" data-taxa="8">Flamengo (R$ 8)</option>
+                <option value="Mumbuca" data-taxa="8">Mumbuca (R$ 8)</option>
+                <option value="Araçatiba" data-taxa="8">Araçatiba (R$ 8)</option>
+                <option value="Outro bairro" data-taxa="">Outro bairro (a combinar)</option>
+              </select>
+            </label>
+            <label class="campo">
+              <span>Endereço</span>
+              <input name="endereco" type="text" autocomplete="street-address" placeholder="Rua, número e ponto de referência">
+            </label>
+          </div>
+
+          <div class="campos">
+            <label class="campo">
+              <span>Seu nome</span>
+              <input name="nome" type="text" autocomplete="given-name">
+            </label>
+            <label class="campo">
+              <span>Pagamento</span>
+              <select name="pagamento">
+                <option value="Pix">Pix</option>
+                <option value="Cartão na maquininha">Cartão na maquininha</option>
+                <option value="Dinheiro">Dinheiro</option>
+              </select>
+            </label>
+            <label class="campo" data-so-dinheiro hidden>
+              <span>Troco para quanto?</span>
+              <input name="troco" type="text" inputmode="decimal" placeholder="Ex.: R$ 50">
+            </label>
+            <label class="campo">
+              <span>Observação</span>
+              <textarea name="observacao" rows="2" placeholder="Ex.: X-Bacon sem cebola"></textarea>
+            </label>
+          </div>
+          <p class="sacola__nota">Tudo opcional. O que ficar em branco, a gente pergunta no WhatsApp.</p>
+        </form>
+      </div>
+
+      <div class="sacola__fecho">
+        <p class="sacola__aviso-fechado" data-aviso-fechado hidden></p>
+        <dl class="totais">
+          <div><dt>Subtotal</dt><dd data-subtotal>R$ 0,00</dd></div>
+          <div><dt>Entrega</dt><dd data-taxa-entrega>R$ 5,00</dd></div>
+          <div class="totais__total"><dt>Total</dt><dd data-total>R$ 0,00</dd></div>
+        </dl>
+        <a class="botao botao--largo" data-enviar href="https://wa.me/5521999990000" target="_blank" rel="noopener">
+          <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>Enviar pedido pelo WhatsApp
+        </a>
+        <p class="sacola__nota">O WhatsApp abre com o pedido escrito. Confira e toque em enviar.</p>
+        <button class="sacola__esvaziar" type="button" data-esvaziar>Esvaziar sacola</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Avisos para leitor de tela ("X-Bacon na sacola") -->
+  <p class="oculto" aria-live="polite" data-aviso></p>
+
+  <script src="js/pagina.js"></script>
+</body>
+</html>

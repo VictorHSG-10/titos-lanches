@@ -73,8 +73,8 @@ Uma seção nova, uma headline nova ou uma mudança de layout passam pelas três
 
 ## GitHub
 
-- Repositório: `git@github.com:VictorHSG-10/titos-lanches.git`, branch `main`. Prévia no GitHub Pages: https://victorhsg-10.github.io/titos-lanches/ (o `canonical`, o `og:url` e o JSON-LD apontam para lá).
-- A chave SSH tem senha. Se o push falhar com `Permission denied (publickey)`, rode `ssh-add ~/.ssh/id_ed25519` no terminal e tente de novo.
+- Repositório: https://github.com/VictorHSG-10/titos-lanches (público), branch `main`. Prévia no GitHub Pages: https://victorhsg-10.github.io/titos-lanches/ (o `canonical`, o `og:url` e o JSON-LD apontam para lá).
+- O remote é HTTPS e o push usa o login do `gh` (`gh auth status`). A chave SSH da máquina tem senha e não é usada aqui.
 - `example/` e `.screenshots/` ficam fora do repositório.
 
 ## Antes de publicar para um cliente real
